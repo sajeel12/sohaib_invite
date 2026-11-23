@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baraat Invitation – Muhammad Afzal with Family</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Pinyon+Script&family=Noto+Nastaliq+Urdu:wght@400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #2a0f17;
+  --panel: #3a1621;
+  --line: #6b3a2a;
+  --gold: #d8b26a;
+  --gold-soft: #b8935a;
+  --ivory: #f6ecdc;
+  --muted: #c9b6a3;
+  --display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --script: "Pinyon Script", "Cormorant Garamond", cursive;
+  --urdu: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", serif;
+  --body: "Jost", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: radial-gradient(1200px 600px at 50% -10%, #4a1b28 0%, transparent 60%), var(--bg);
+  color: var(--ivory);
+  font-family: var(--body);
+  font-weight: 300;
+  line-height: 1.6;
+  padding: 24px 16px 64px;
+}
+.card { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px; }
+.frame {
+  position: relative;
+  border: 1px solid var(--line);
+  outline: 1px solid var(--gold-soft);
+  outline-offset: -8px;
+  padding: 48px 28px;
+  background: linear-gradient(180deg, var(--panel), var(--bg));
+  text-align: center;
+}
+.corner { position: absolute; width: 44px; height: 44px; color: var(--gold); }
+.corner.tl { top: 14px; left: 14px; }
+.corner.tr { top: 14px; right: 14px; transform: scaleX(-1); }
+.corner.bl { bottom: 14px; left: 14px; transform: scaleY(-1); }
+.corner.br { bottom: 14px; right: 14px; transform: scale(-1,-1); }
+
+.bismillah { font-family: var(--urdu); color: var(--gold); font-size: 1.5rem; line-height: 2.6; margin: 0; }
+.guest {
+  margin: 14px auto 22px;
+  padding: 16px 18px;
+  max-width: 420px;
+  border-top: 1px solid var(--gold-soft);
+  border-bottom: 1px solid var(--gold-soft);
+}
+.guest small { display: block; font: 500 .68rem/1 var(--body); letter-spacing: .28em; text-transform: uppercase; color: var(--gold-soft); }
+.guest .gname { display: block; font-family: var(--display); font-weight: 600; font-size: clamp(1.5rem, 6vw, 2rem); color: var(--ivory); margin-top: 8px; line-height: 1.2; }
+.guest .gfam { display: block; font-family: var(--display); font-style: italic; font-size: 1.15rem; color: var(--gold); }
+.lead { font-family: var(--display); font-style: italic; font-size: 1.15rem; color: var(--muted); max-width: 46ch; margin: 8px auto 0; text-wrap: balance; }
+.hosts {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(1.7rem, 6.5vw, 2.4rem);
+  letter-spacing: .04em; color: var(--ivory);
+  margin: 18px 0 10px; line-height: 1.2; text-wrap: balance;
+}
+.hosts::after { content: ""; display: block; width: 64px; height: 1px; background: var(--gold); margin: 14px auto 0; }
+.names { font-family: var(--script); font-weight: 400; color: var(--gold); font-size: clamp(3rem, 12vw, 5.2rem); line-height: 1.1; margin: 20px 0 4px; }
+.names .amp { display: block; font-family: var(--display); font-style: italic; font-size: .4em; color: var(--ivory); margin: 4px 0; }
+.divider { display: flex; align-items: center; gap: 12px; color: var(--gold); margin: 28px auto 0; max-width: 260px; }
+.divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--gold-soft); }
+
+h2 { font-family: var(--display); font-weight: 500; font-size: 1.9rem; color: var(--gold); margin: 0 0 4px; text-align: center; text-wrap: balance; }
+.sub { text-align: center; color: var(--muted); font-size: .9rem; margin: 0 0 24px; }
+
+.countdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.unit { border: 1px solid var(--line); padding: 16px 4px 12px; text-align: center; background: var(--panel); }
+.unit b { display: block; font-family: var(--display); font-weight: 500; font-size: clamp(1.8rem, 7vw, 2.6rem); color: var(--ivory); font-variant-numeric: tabular-nums; line-height: 1; }
+.unit small { font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-soft); }
+
+.event { border: 1px solid var(--line); border-top: 3px solid #b23a48; background: var(--panel); padding: 28px 24px; display: grid; gap: 18px; }
+.event-head { text-align: center; }
+.event-head .urdu { font-family: var(--urdu); color: var(--gold); font-size: 1.3rem; line-height: 2.2; }
+.event-head h3 { font-family: var(--display); font-weight: 500; font-size: 2.2rem; margin: 0; line-height: 1.1; }
+.event-head p { margin: 6px 0 0; color: var(--muted); font-family: var(--display); font-style: italic; font-size: 1.1rem; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin: 0; }
+.facts div { border-left: 2px solid var(--line); padding-left: 12px; }
+.facts dt { font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-soft); }
+.facts dd { margin: 2px 0 0; font-size: 1rem; color: var(--ivory); }
+.facts .wx { grid-column: 1 / -1; }
+.facts .wx dd { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; }
+.facts .wx b { font-weight: 500; font-size: 1.15rem; color: var(--gold); font-variant-numeric: tabular-nums; }
+.facts .wx span { color: var(--muted); font-size: .92rem; }
+.wxi { width: 20px; height: 20px; color: var(--gold); flex: none; }
+.wx-note { text-align: center; color: var(--muted); font-size: .8rem; margin: 14px 0 0; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn {
+  flex: 1 1 180px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font: 500 .82rem/1 var(--body); letter-spacing: .12em; text-transform: uppercase; text-decoration: none;
+  padding: 14px 16px; border: 1px solid var(--gold); color: var(--gold); background: transparent; cursor: pointer;
+}
+.btn:hover { background: rgba(216,178,106,.1); }
+.btn.solid { background: var(--gold); color: var(--bg); }
+.btn.solid:hover { background: #e6c483; }
+:focus-visible { outline: 2px solid var(--ivory); outline-offset: 3px; }
+
+footer { text-align: center; color: var(--muted); font-family: var(--display); font-style: italic; font-size: 1.1rem; }
+
+@media (max-width: 440px) {
+  .frame { padding: 44px 18px; }
+  .countdown { gap: 6px; }
+  .event { padding: 24px 16px; }
+}
+
+/* Scratch card intro */
+body.sealed { overflow: hidden; }
+#intro {
+  position: fixed; inset: 0; z-index: 50;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px;
+  background: radial-gradient(900px 600px at 50% 40%, #4a1b28 0%, transparent 70%), var(--bg);
+  padding: 16px; text-align: center;
+  transition: opacity .9s ease .9s, visibility 0s linear 1.8s;
+}
+#intro.open { opacity: 0; visibility: hidden; pointer-events: none; }
+.intro-top { font-family: var(--display); font-style: italic; color: var(--muted); font-size: 1.15rem; }
+.intro-top b { display: block; font-family: var(--display); font-style: normal; font-weight: 500; color: var(--ivory); font-size: 1.7rem; letter-spacing: .03em; margin-top: 2px; }
+.scratch {
+  position: relative; width: min(340px, 86vw); aspect-ratio: 1.2;
+  border: 1px solid var(--gold-soft); outline: 1px solid var(--gold-soft); outline-offset: 6px;
+  box-shadow: 0 30px 60px rgba(0,0,0,.45);
+  animation: glow 2.6s ease-in-out infinite;
+}
+.under {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, #fbf3e6, #efe0c6);
+  color: #5a2131;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 16px;
+}
+.under small { font: 500 .66rem/1 var(--body); letter-spacing: .28em; text-transform: uppercase; color: #8a5a3a; }
+.under .n { font-family: var(--script); font-size: clamp(2.1rem, 10vw, 2.8rem); line-height: 1.15; color: #6b2738; }
+.under .w { font-family: var(--display); font-style: italic; font-size: 1.1rem; }
+.under .d { font-family: var(--display); font-weight: 600; font-size: 1.05rem; margin-top: 8px; letter-spacing: .04em; }
+#foil { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: none; cursor: grab; transition: opacity .6s ease; }
+#foil.gone { opacity: 0; pointer-events: none; }
+.hint { font: 500 .78rem/1.4 var(--body); letter-spacing: .26em; text-transform: uppercase; color: var(--gold); animation: pulse 1.8s ease-in-out infinite; margin: 0; }
+.skip { background: none; border: 0; color: var(--muted); font: 400 .85rem var(--body); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; padding: 6px; }
+.skip:hover { color: var(--ivory); }
+#intro.open .hint, #intro.revealed .hint, #intro.revealed .skip { opacity: 0; transition: opacity .4s; }
+#intro.revealed .scratch { animation: none; }
+@keyframes glow { 50% { box-shadow: 0 30px 60px rgba(0,0,0,.45), 0 0 40px rgba(216,178,106,.25); } }
+@keyframes pulse { 50% { opacity: .45; } }
+#fx { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 60; }
+.card.reveal { animation: reveal 1.4s ease both 1.7s; }
+@keyframes reveal { from { opacity: 0; transform: translateY(24px) scale(.98); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .scratch, .hint { animation: none; }
+  #intro, #foil { transition-duration: .01s; transition-delay: 0s; }
+  .card.reveal { animation: none; }
+}
+</style>
+</head>
+<body class="sealed">
+<div id="intro" role="dialog" aria-label="Baraat invitation">
+  <div class="intro-top">Dear Muhammad Afzal with Family<b>You are invited to the Baraat</b></div>
+  <p class="hint">Scratch the gold to reveal ✦</p>
+  <div class="scratch">
+    <div class="under" aria-hidden="true">
+      <small>The Baraat of</small>
+      <span class="n">Aseela</span>
+      <span class="w">with</span>
+      <span class="n">Waleed</span>
+      <span class="d">Saturday, 12 December 2026</span>
+    </div>
+    <canvas id="foil" aria-hidden="true"></canvas>
+  </div>
+  <button type="button" class="skip" id="skip">Can't scratch? Tap here to open</button>
+</div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<main class="card">
+
+  <section class="frame" aria-label="Invitation">
+    <svg class="corner tl" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2 42V12C2 6.5 6.5 2 12 2h30"/><path d="M8 42V16c0-4.4 3.6-8 8-8h26"/><circle cx="12" cy="12" r="3"/></svg>
+    <svg class="corner tr" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2 42V12C2 6.5 6.5 2 12 2h30"/><path d="M8 42V16c0-4.4 3.6-8 8-8h26"/><circle cx="12" cy="12" r="3"/></svg>
+    <svg class="corner bl" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2 42V12C2 6.5 6.5 2 12 2h30"/><path d="M8 42V16c0-4.4 3.6-8 8-8h26"/><circle cx="12" cy="12" r="3"/></svg>
+    <svg class="corner br" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2 42V12C2 6.5 6.5 2 12 2h30"/><path d="M8 42V16c0-4.4 3.6-8 8-8h26"/><circle cx="12" cy="12" r="3"/></svg>
+
+    <p class="bismillah" lang="ur" dir="rtl">بِسْمِ اللّٰہِ الرَّحْمٰنِ الرَّحِیْمِ</p>
+    <div class="guest">
+      <small>Respected</small>
+      <span class="gname">Muhammad Afzal</span>
+      <span class="gfam">with Family</span>
+    </div>
+    <p class="lead">With the blessings of Allah and the prayers of our elders</p>
+    <p class="hosts">Mr. &amp; Mrs. Dilshad Ahmad</p>
+    <p class="lead" style="margin-top:0">request the pleasure of your company at the Baraat of their beloved daughter</p>
+    <h1 class="names">Aseela Dilshad<span class="amp">with</span>Waleed Zafar</h1>
+    <div class="divider" aria-hidden="true">✦</div>
+  </section>
+
+  <section aria-labelledby="cd-title">
+    <h2 id="cd-title">Counting down to the Baraat</h2>
+    <p class="sub">Saturday, 12 December 2026</p>
+    <div class="countdown" role="timer" aria-live="off">
+      <div class="unit"><b id="cd-d">00</b><small>Days</small></div>
+      <div class="unit"><b id="cd-h">00</b><small>Hours</small></div>
+      <div class="unit"><b id="cd-m">00</b><small>Minutes</small></div>
+      <div class="unit"><b id="cd-s">00</b><small>Seconds</small></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="ev-title">
+    <article class="event">
+      <div class="event-head">
+        <div class="urdu" lang="ur" dir="rtl">بارات</div>
+        <h3 id="ev-title">Baraat</h3>
+        <p>Nikah and Rukhsati</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Date</dt><dd>Saturday, 12 December 2026</dd></div>
+        <div><dt>Time</dt><dd>6:00 PM to 10:00 PM</dd></div>
+        <div><dt>Venue</dt><dd>Magnolia Palace</dd></div>
+        <div class="wx"><dt>Expected weather</dt><dd><svg class="wxi" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" fill="currentColor"/></svg><b>16° → 11°C</b><span>Cool evening, bring a shawl</span></dd></div>
+      </dl>
+      <div class="actions">
+        <a class="btn solid" href="https://maps.app.goo.gl/FtTRLjBWioNwLnMEA" target="_blank" rel="noopener">Open in Maps</a>
+        <a class="btn" id="gcal" href="#" target="_blank" rel="noopener">Add to Calendar</a>
+      </div>
+    </article>
+    <p class="wx-note">Temperature is typical for Lahore in December at this time, not a live forecast.</p>
+  </section>
+
+  <footer>
+    <div>Your presence and duas are the greatest gift.</div>
+    <button type="button" class="btn" id="again" style="margin:18px auto 0;max-width:240px">Celebrate again ✦</button>
+  </footer>
+</main>
+
+<script>
+const EVENT = {
+  name: "Baraat", tagline: "Nikah and Rukhsati",
+  start: "2026-12-12T18:00:00+05:00", end: "2026-12-12T22:00:00+05:00",
+  venue: "Magnolia Palace", map: "https://maps.app.goo.gl/FtTRLjBWioNwLnMEA"
+};
+const $ = (id) => document.getElementById(id);
+const pad = (n) => String(n).padStart(2, "0");
+
+const target = new Date(EVENT.start).getTime();
+function tick() {
+  let diff = Math.max(0, target - Date.now());
+  const d = Math.floor(diff / 864e5); diff -= d * 864e5;
+  const h = Math.floor(diff / 36e5);  diff -= h * 36e5;
+  const m = Math.floor(diff / 6e4);   diff -= m * 6e4;
+  const s = Math.floor(diff / 1e3);
+  $("cd-d").textContent = d; $("cd-h").textContent = pad(h);
+  $("cd-m").textContent = pad(m); $("cd-s").textContent = pad(s);
+  if (target <= Date.now()) $("cd-title").textContent = "The big day is here";
+}
+tick(); setInterval(tick, 1000);
+
+(function () {
+  const f = (iso) => new Date(iso).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+  const p = new URLSearchParams({
+    action: "TEMPLATE",
+    text: "Baraat: Aseela & Waleed",
+    dates: `${f(EVENT.start)}/${f(EVENT.end)}`,
+    details: `${EVENT.tagline}. Map: ${EVENT.map}`,
+    location: EVENT.venue
+  });
+  $("gcal").href = "https://calendar.google.com/calendar/render?" + p.toString();
+})();
+
+(function () {
+  const intro = $("intro"), card = document.querySelector(".card");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const cv = $("fx"), ctx = cv.getContext("2d");
+  let W, H, dpr, parts = [], rockets = [], petals = [], running = false, until = 0;
+  function size() { dpr = Math.min(2, devicePixelRatio || 1); W = innerWidth; H = innerHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+  size(); addEventListener("resize", size);
+  const COLORS = ["#d8b26a", "#f6ecdc", "#e7c98a", "#c94f62", "#f2d9a0", "#ffffff"];
+  const rnd = (a, b) => a + Math.random() * (b - a);
+
+  function launch() {
+    rockets.push({ x: rnd(W * .15, W * .85), y: H + 10, vx: rnd(-.6, .6), vy: rnd(-11.5, -9), ty: rnd(H * .12, H * .42), c: COLORS[(Math.random() * COLORS.length) | 0] });
+  }
+  function burst(x, y, c) {
+    const n = 70 + (Math.random() * 40 | 0), alt = COLORS[(Math.random() * COLORS.length) | 0];
+    for (let i = 0; i < n; i++) {
+      const a = (i / n) * Math.PI * 2, sp = rnd(1.5, 5.5);
+      parts.push({ x, y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp, life: 1, decay: rnd(.009, .016), c: i % 3 ? c : alt, r: rnd(1.2, 2.4) });
+    }
+  }
+  function petal() {
+    petals.push({ x: rnd(0, W), y: -20, vy: rnd(1, 2.2), vx: rnd(-.6, .6), rot: rnd(0, 6.28), vr: rnd(-.04, .04), s: rnd(6, 11), sway: rnd(0, 6.28), c: Math.random() < .6 ? "#c94f62" : "#e7c98a" });
+  }
+  function frame(t) {
+    ctx.globalCompositeOperation = "source-over";
+    ctx.clearRect(0, 0, W, H);
+    const live = t < until;
+    if (live && Math.random() < .07) launch();
+    if (live && Math.random() < .35) petal();
+    ctx.globalCompositeOperation = "lighter";
+    rockets = rockets.filter(r => {
+      r.x += r.vx; r.y += r.vy; r.vy += .12;
+      ctx.fillStyle = r.c; ctx.beginPath(); ctx.arc(r.x, r.y, 2.2, 0, 7); ctx.fill();
+      if (r.y <= r.ty || r.vy >= 0) { burst(r.x, r.y, r.c); return false; }
+      return true;
+    });
+    parts = parts.filter(p => {
+      p.x += p.vx; p.y += p.vy; p.vx *= .985; p.vy = p.vy * .985 + .045; p.life -= p.decay;
+      if (p.life <= 0) return false;
+      ctx.globalAlpha = p.life; ctx.fillStyle = p.c;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 7); ctx.fill();
+      return true;
+    });
+    ctx.globalCompositeOperation = "source-over";
+    petals = petals.filter(p => {
+      p.sway += .03; p.x += p.vx + Math.sin(p.sway) * .6; p.y += p.vy; p.rot += p.vr;
+      if (p.y > H + 20) return false;
+      ctx.globalAlpha = .85; ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+      ctx.fillStyle = p.c; ctx.beginPath(); ctx.ellipse(0, 0, p.s, p.s * .55, 0, 0, 7); ctx.fill(); ctx.restore();
+      return true;
+    });
+    ctx.globalAlpha = 1;
+    if (live || parts.length || rockets.length || petals.length) requestAnimationFrame(frame);
+    else { running = false; ctx.clearRect(0, 0, W, H); }
+  }
+  function celebrate(ms) {
+    if (reduce) return;
+    until = performance.now() + ms;
+    for (let i = 0; i < 4; i++) setTimeout(launch, i * 180);
+    if (!running) { running = true; requestAnimationFrame(frame); }
+  }
+  function dust(x, y) {
+    if (reduce) return;
+    for (let i = 0; i < 3; i++) parts.push({ x, y, vx: rnd(-1.5, 1.5), vy: rnd(-2.5, .5), life: 1, decay: rnd(.02, .04), c: COLORS[(Math.random() * 3) | 0], r: rnd(1, 2) });
+    if (!running) { running = true; requestAnimationFrame(frame); }
+  }
+  function open() {
+    if (intro.classList.contains("open")) return;
+    intro.classList.add("open");
+    card.classList.add("reveal");
+    document.body.classList.remove("sealed");
+    setTimeout(() => celebrate(5500), reduce ? 0 : 900);
+    setTimeout(() => intro.remove(), 2000);
+  }
+
+  const foil = $("foil"), fx2 = foil.getContext("2d");
+  let fw, fh, drawing = false, last = null, moves = 0, revealed = false;
+  function paintFoil() {
+    const r = foil.getBoundingClientRect(), k = Math.min(2, devicePixelRatio || 1);
+    fw = r.width; fh = r.height; foil.width = fw * k; foil.height = fh * k;
+    fx2.setTransform(k, 0, 0, k, 0, 0);
+    fx2.globalCompositeOperation = "source-over";
+    const g = fx2.createLinearGradient(0, 0, fw, fh);
+    g.addColorStop(0, "#8a6a35"); g.addColorStop(.22, "#e7c98a"); g.addColorStop(.45, "#b8935a");
+    g.addColorStop(.6, "#f2d9a0"); g.addColorStop(.8, "#a8833f"); g.addColorStop(1, "#d8b26a");
+    fx2.fillStyle = g; fx2.fillRect(0, 0, fw, fh);
+    for (let i = 0; i < 900; i++) {
+      fx2.fillStyle = Math.random() < .5 ? "rgba(255,245,220,.35)" : "rgba(90,60,20,.25)";
+      fx2.fillRect(Math.random() * fw, Math.random() * fh, 1, 1);
+    }
+    fx2.strokeStyle = "rgba(255,248,230,.18)"; fx2.lineWidth = 1;
+    for (let x = -fh; x < fw; x += 9) { fx2.beginPath(); fx2.moveTo(x, fh); fx2.lineTo(x + fh, 0); fx2.stroke(); }
+    fx2.strokeStyle = "rgba(90,33,49,.55)"; fx2.lineWidth = 1.5;
+    fx2.strokeRect(12, 12, fw - 24, fh - 24);
+    fx2.fillStyle = "rgba(74,27,40,.75)"; fx2.textAlign = "center"; fx2.textBaseline = "middle";
+    fx2.font = "600 " + Math.round(fw / 7) + "px 'Pinyon Script', 'Cormorant Garamond', serif";
+    fx2.fillText("A & W", fw / 2, fh / 2 - fh * .05);
+    fx2.font = "500 11px Jost, sans-serif";
+    fx2.fillText("S C R A T C H   H E R E", fw / 2, fh / 2 + fh * .2);
+  }
+  function pos(e) { const r = foil.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top, gx: e.clientX, gy: e.clientY }; }
+  function scratch(p) {
+    fx2.globalCompositeOperation = "destination-out";
+    fx2.lineCap = fx2.lineJoin = "round"; fx2.lineWidth = Math.max(34, fw / 8);
+    fx2.beginPath(); fx2.moveTo(last ? last.x : p.x, last ? last.y : p.y); fx2.lineTo(p.x, p.y); fx2.stroke();
+    last = p; dust(p.gx, p.gy);
+    if (++moves % 8 === 0) checkCleared();
+  }
+  function checkCleared() {
+    const d = fx2.getImageData(0, 0, foil.width, foil.height).data;
+    let clear = 0, total = 0;
+    for (let i = 3; i < d.length; i += 4 * 24) { total++; if (d[i] < 40) clear++; }
+    if (clear / total > .5) finishReveal();
+  }
+  function finishReveal() {
+    if (revealed) return; revealed = true;
+    foil.classList.add("gone"); intro.classList.add("revealed");
+    const r = foil.getBoundingClientRect();
+    if (!reduce) for (let i = 0; i < 3; i++) setTimeout(() => burst(r.left + r.width * (.25 + .25 * i), r.top + r.height * .5, COLORS[i]), i * 150);
+    if (!running && !reduce) { running = true; requestAnimationFrame(frame); }
+    setTimeout(open, reduce ? 300 : 1500);
+  }
+  foil.addEventListener("pointerdown", e => { drawing = true; last = null; foil.setPointerCapture(e.pointerId); scratch(pos(e)); });
+  foil.addEventListener("pointermove", e => { if (drawing) scratch(pos(e)); });
+  ["pointerup", "pointercancel"].forEach(t => foil.addEventListener(t, () => { drawing = false; last = null; }));
+  $("skip").addEventListener("click", finishReveal);
+  paintFoil();
+  if (document.fonts) document.fonts.ready.then(() => { if (!moves) paintFoil(); });
+  addEventListener("resize", () => { if (!moves && !revealed) paintFoil(); });
+
+  $("again").addEventListener("click", () => celebrate(3500));
+})();
+</script>
+</body>
+</html>
